@@ -11,5 +11,10 @@ func _process(_delta):
 	var minutes = time / 60
 	# Finder resterende sekunder efter minutter er fjernet
 	var seconds = time % 60
-	# Viser tiden som minutter:sekunder (fx 0:25)
-	text = "Tid tilbage: " + str(minutes) +":" + str(seconds)
+	# "%02d:%02d" laver tekst i formatet mm:ss
+	# % indsætter værdierne i rækkefølge fra [minutes, seconds]
+	# %d betyder at det er et helt tal
+	# 2 betyder at tallet mindst skal være 2 cifre
+	# 0 betyder at der sættes 0 foran hvis tallet kun er et ciffer
+	# Eksempel: 0 bliver til "00", 2 bliver til "02", 12 forbliver "12"
+	text = "Tid tilbage: %02d:%02d" % [minutes, seconds]

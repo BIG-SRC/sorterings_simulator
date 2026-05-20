@@ -19,3 +19,5 @@ func _wrong():
 func _on_timer_timeout() -> void:
 	# Skifter til slutscenen
 	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
+	#Viser den normale cursor
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
