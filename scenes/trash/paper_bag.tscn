@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://0yowi3s1sdel"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_u0s1i"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_mc2ij"]
+
+[node name="paper bag" type="Area2D" groups=["pap_og_papir"]]
+z_index = 5
+script = ExtResource("1_u0s1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_mc2ij")
+region_enabled = true
+region_rect = Rect2(206, 15, 36, 48)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, -2)
+polygon = PackedVector2Array(-16, 20, 16, 20, 12, 4, 15, -13, 12, -23, -9, -23, -8, -13, -15, 11)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

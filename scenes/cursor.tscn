@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://uyr3y8itaxhh"]
+
+[ext_resource type="Texture2D" uid="uid://dunox58konupx" path="res://assets/sprites/cursor.png" id="1_1eco6"]
+[ext_resource type="Script" uid="uid://drdcqjcbh6nx7" path="res://scripts/cursor.gd" id="2_s0nli"]
+
+[node name="Cursor" type="Sprite2D"]
+texture = ExtResource("1_1eco6")
+region_enabled = true
+region_rect = Rect2(0, 250, 51, 58)
+script = ExtResource("2_s0nli")

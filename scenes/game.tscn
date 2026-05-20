@@ -1,0 +1,135 @@
+[gd_scene load_steps=28 format=3 uid="uid://d1syfixm23c76"]
+
+[ext_resource type="Script" uid="uid://fv22pw105o2f" path="res://scripts/game_manager.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bdkc2p5unoc" path="res://scenes/trashcans/madaffald.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://coyvb6mo3cn3" path="res://scenes/trash/aviser.tscn" id="3_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bipgsqyikeyj0" path="res://scenes/trash/bottle.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dda4yk6d6ey86" path="res://scenes/trashcans/glas_og_metal.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bi8sfajmbrs8o" path="res://scenes/trash/big_can.tscn" id="4_pl11u"]
+[ext_resource type="PackedScene" uid="uid://wki2mr1xuhov" path="res://scenes/trashcans/plast.tscn" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bh18x5444tqss" path="res://scenes/trash/dunk.tscn" id="6_bhx41"]
+[ext_resource type="PackedScene" uid="uid://cgo2gjo20js4v" path="res://scenes/trashcans/restaffald.tscn" id="6_gee14"]
+[ext_resource type="PackedScene" uid="uid://corj0e53cqul7" path="res://scenes/trash/glas.tscn" id="7_qnb83"]
+[ext_resource type="PackedScene" uid="uid://b4liu04jux0h8" path="res://scenes/trashcans/pap_og_papir.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://dysmntow5xgcb" path="res://scenes/trash/glass_bottle.tscn" id="8_sww3w"]
+[ext_resource type="PackedScene" uid="uid://kent4sjobmqs" path="res://scenes/trash/medicin_flaske.tscn" id="9_suyxu"]
+[ext_resource type="PackedScene" uid="uid://bmkckcrmi4i23" path="res://scenes/trashcans/farligt_affald.tscn" id="9_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cd25kc8hvrvxi" path="res://scenes/trashcans/mad__og_drikke__kartoner.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://0yowi3s1sdel" path="res://scenes/trash/paper_bag.tscn" id="10_sgl2t"]
+[ext_resource type="PackedScene" uid="uid://b45wduhq4dnpw" path="res://scenes/trash/pap_kasse.tscn" id="11_qouja"]
+[ext_resource type="PackedScene" uid="uid://c7iyw10phfn5f" path="res://scenes/trash/pizza_bakke.tscn" id="12_wljb1"]
+[ext_resource type="PackedScene" uid="uid://d0i8m8s2ociyl" path="res://scenes/trash/skum_kop.tscn" id="13_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://bksrmvx0ogl3y" path="res://scenes/trash/small_can.tscn" id="14_js0lu"]
+[ext_resource type="PackedScene" uid="uid://cl1y4gms4036i" path="res://scenes/trash/soda_can.tscn" id="15_gxtfn"]
+[ext_resource type="PackedScene" uid="uid://dx7hfqiv3msir" path="res://scenes/trash/spray_flaske.tscn" id="16_twgab"]
+[ext_resource type="PackedScene" uid="uid://cfxeqmufx53sc" path="res://scenes/trash/vaske_dunk.tscn" id="17_02fa5"]
+[ext_resource type="Script" uid="uid://dd17ll52oex6e" path="res://scripts/score.gd" id="25_pl11u"]
+[ext_resource type="Script" uid="uid://dsjs2ipn6thch" path="res://scripts/time.gd" id="26_bhx41"]
+[ext_resource type="Texture2D" uid="uid://bo72baqsupm80" path="res://assets/sprites/baggrund.jpg" id="26_qnb83"]
+[ext_resource type="PackedScene" uid="uid://uyr3y8itaxhh" path="res://scenes/cursor.tscn" id="27_qnb83"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_uwrxv")
+
+[node name="Baggrund" type="Sprite2D" parent="."]
+position = Vector2(580.1838, 323.25)
+scale = Vector2(1.8504274, 1.8504274)
+texture = ExtResource("26_qnb83")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="trash" type="Node" parent="."]
+
+[node name="aviser" parent="trash" instance=ExtResource("3_e1j6l")]
+position = Vector2(562, 598)
+
+[node name="big can" parent="trash" instance=ExtResource("4_pl11u")]
+position = Vector2(610, 583)
+
+[node name="bottle" parent="trash" instance=ExtResource("3_lnu2h")]
+position = Vector2(583, 589)
+
+[node name="bottle2" parent="trash" instance=ExtResource("6_bhx41")]
+position = Vector2(703, 600)
+
+[node name="glas" parent="trash" instance=ExtResource("7_qnb83")]
+position = Vector2(672, 593)
+
+[node name="glass bottle" parent="trash" instance=ExtResource("8_sww3w")]
+position = Vector2(673, 615)
+
+[node name="medicin flaske" parent="trash" instance=ExtResource("9_suyxu")]
+position = Vector2(658, 608)
+
+[node name="paper bag" parent="trash" instance=ExtResource("10_sgl2t")]
+position = Vector2(632, 571)
+
+[node name="pap kasse" parent="trash" instance=ExtResource("11_qouja")]
+position = Vector2(631, 612)
+
+[node name="pizza bakke" parent="trash" instance=ExtResource("12_wljb1")]
+position = Vector2(716, 624)
+
+[node name="skum kop" parent="trash" instance=ExtResource("13_v2yb1")]
+position = Vector2(588, 603)
+
+[node name="small can" parent="trash" instance=ExtResource("14_js0lu")]
+position = Vector2(578, 620)
+
+[node name="soda can" parent="trash" instance=ExtResource("15_gxtfn")]
+position = Vector2(603, 618)
+
+[node name="spray flaske" parent="trash" instance=ExtResource("16_twgab")]
+position = Vector2(531, 617)
+
+[node name="vaske dunk" parent="trash" instance=ExtResource("17_02fa5")]
+position = Vector2(557, 616)
+
+[node name="Skraldespande" type="Node" parent="."]
+
+[node name="madaffald" parent="Skraldespande" instance=ExtResource("2_yqjtg")]
+position = Vector2(74, 553)
+
+[node name="glas og metal" parent="Skraldespande" instance=ExtResource("4_p57ef")]
+position = Vector2(195, 554)
+
+[node name="plast" parent="Skraldespande" instance=ExtResource("5_u5sy4")]
+position = Vector2(315, 556)
+
+[node name="restaffald" parent="Skraldespande" instance=ExtResource("6_gee14")]
+position = Vector2(438, 556)
+
+[node name="pap og papir" parent="Skraldespande" instance=ExtResource("8_gee14")]
+position = Vector2(812, 558)
+
+[node name="farligt affald" parent="Skraldespande" instance=ExtResource("9_vtaks")]
+position = Vector2(1075, 556)
+
+[node name="mad- og drikke- kartoner" parent="Skraldespande" instance=ExtResource("10_kvpfn")]
+position = Vector2(942, 555)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 120.0
+offset_bottom = 49.0
+text = "Score"
+script = ExtResource("25_pl11u")
+
+[node name="time" type="Label" parent="CanvasLayer"]
+offset_left = 1005.0
+offset_top = 21.0
+offset_right = 1104.0
+offset_bottom = 49.0
+text = "Timer"
+script = ExtResource("26_bhx41")
+
+[node name="Cursor" parent="CanvasLayer" instance=ExtResource("27_qnb83")]
+z_index = 1000
+position = Vector2(-38, 34)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

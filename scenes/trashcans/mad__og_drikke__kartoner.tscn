@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd25kc8hvrvxi"]
+
+[ext_resource type="Script" uid="uid://ign7oi6bk84" path="res://scripts/mad__og_drikke__kartoner.gd" id="1_q4gq1"]
+[ext_resource type="Texture2D" uid="uid://cmeec33hxw7qa" path="res://assets/sprites/1000_F_904955768_gC9ppUr2tTHrXD5HkU0wQyMBG76dKVEm-removebg-preview.png" id="2_x0rsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyg11"]
+size = Vector2(84, 132)
+
+[node name="mad- og drikke- kartoner" type="Area2D"]
+script = ExtResource("1_q4gq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x0rsm")
+region_enabled = true
+region_rect = Rect2(49, 217, 114, 147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_uyg11")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -46.0
+offset_right = 48.0
+offset_bottom = 46.0
+theme_override_constants/line_spacing = -8
+theme_override_font_sizes/font_size = 15
+text = "MAD- OG 
+DRIKKE-
+
+
+
+KARTONER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

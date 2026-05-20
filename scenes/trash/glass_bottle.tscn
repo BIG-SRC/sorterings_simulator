@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dysmntow5xgcb"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_84jvg"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_lk8c8"]
+
+[node name="glass bottle" type="Area2D" groups=["glas_og_metal"]]
+z_index = 5
+script = ExtResource("1_84jvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["glas_og_metal"]]
+position = Vector2(3, -3)
+texture = ExtResource("2_lk8c8")
+region_enabled = true
+region_rect = Rect2(243, 12, 17, 50)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, 0)
+polygon = PackedVector2Array(-3, -26, -5, -12, -7, -2, -5, 8, -7, 18, -5, 20, 5, 20, 7, 18, 7, 14, 4, 8, 7, -2, 5, -13, 2, -26)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

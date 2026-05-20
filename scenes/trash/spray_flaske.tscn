@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx7hfqiv3msir"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_2u3f5"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_7e67i"]
+
+[node name="spray flaske" type="Area2D" groups=["farligt_affald"]]
+z_index = 5
+script = ExtResource("1_2u3f5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_7e67i")
+region_enabled = true
+region_rect = Rect2(496, 22, 17, 40)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -14, -4, 16, 10, 16, 10, -13, 5, -17, 4, -20, 2, -20)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

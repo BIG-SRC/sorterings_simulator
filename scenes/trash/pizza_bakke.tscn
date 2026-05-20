@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7iyw10phfn5f"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_frp0j"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_vrrdw"]
+
+[node name="pizza bakke" type="Area2D" groups=["restaffald"]]
+z_index = 5
+script = ExtResource("1_frp0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_vrrdw")
+region_enabled = true
+region_rect = Rect2(403, 32, 60, 30)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, -10, -8, 5, -25, 5, -25, 10, 29, 10, 31, 2, 14, -14, -21, -15)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

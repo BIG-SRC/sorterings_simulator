@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bipgsqyikeyj0"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_irfwg"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="1_olv0n"]
+
+[node name="bottle" type="Area2D" groups=["plast"]]
+z_index = 5
+script = ExtResource("1_irfwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.75, -8.616669)
+scale = Vector2(1.3666667, 1.3666668)
+texture = ExtResource("1_olv0n")
+region_enabled = true
+region_rect = Rect2(2, 16, 15, 47)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, -3)
+polygon = PackedVector2Array(-3, -34, -3, -27, -9, -19, -9, 20, -5, 23, 4, 23, 8, 19, 8, -19, 2, -27, 2, -34)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://corj0e53cqul7"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_nb7to"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_b7swc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3edq5"]
+size = Vector2(18, 31)
+
+[node name="glas" type="Area2D" groups=["glas_og_metal"]]
+z_index = 5
+script = ExtResource("1_nb7to")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_b7swc")
+region_enabled = true
+region_rect = Rect2(262, 27, 23, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -3.5)
+shape = SubResource("RectangleShape2D_3edq5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

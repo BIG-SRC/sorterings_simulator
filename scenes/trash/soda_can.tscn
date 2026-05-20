@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl1y4gms4036i"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_xsemx"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_dv5nu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0i1y"]
+size = Vector2(16, 29)
+
+[node name="soda can" type="Area2D" groups=["glas_og_metal"]]
+z_index = 5
+script = ExtResource("1_xsemx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_dv5nu")
+region_enabled = true
+region_rect = Rect2(353, 28, 18, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -2.5)
+shape = SubResource("RectangleShape2D_a0i1y")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

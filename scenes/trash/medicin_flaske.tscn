@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://kent4sjobmqs"]
+
+[ext_resource type="Script" uid="uid://cc2lhly0yg10c" path="res://scripts/trash.gd" id="1_x7b6s"]
+[ext_resource type="Texture2D" uid="uid://blmnub506f2wc" path="res://assets/sprites/recycle_items.png" id="2_uvfh7"]
+
+[node name="medicin flaske" type="Area2D" groups=["glas_og_metal"]]
+z_index = 5
+script = ExtResource("1_x7b6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_uvfh7")
+region_enabled = true
+region_rect = Rect2(287, 13, 16, 50)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, -3)
+polygon = PackedVector2Array(-1, -23, -3, -9, -6, -4, -6, 22, 6, 22, 6, -5, 3, -10, 2, -23)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

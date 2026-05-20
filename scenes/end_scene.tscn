@@ -1,0 +1,177 @@
+[gd_scene load_steps=21 format=3 uid="uid://cwxusormhyd1a"]
+
+[ext_resource type="Texture2D" uid="uid://bgyxecsl52kaf" path="res://assets/sprites/Space background.jpg" id="1_85q8e"]
+[ext_resource type="Script" uid="uid://dd17ll52oex6e" path="res://scripts/score.gd" id="2_fjxr3"]
+[ext_resource type="Texture2D" uid="uid://cgvyusdp8qwdk" path="res://assets/sprites/try again.png" id="3_4835h"]
+[ext_resource type="Script" uid="uid://b1ndax7wndxii" path="res://scripts/try_again.gd" id="3_fjxr3"]
+[ext_resource type="Texture2D" uid="uid://c18fkndmlot7a" path="res://assets/sprites/earth.png" id="3_ojf8p"]
+[ext_resource type="Script" uid="uid://dtlwfwj2na7r5" path="res://scripts/quote.gd" id="5_4835h"]
+
+[sub_resource type="GDScript" id="GDScript_gxua3"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkitb"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(7, 14, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ob6"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(128, 14, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4tfk"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(249, 14, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tt1p"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(370, 14, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwuoi"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(7, 131, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tayxt"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(128, 131, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiwkg"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(249, 131, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4553j"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(370, 131, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpr2m"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(7, 248, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c58ut"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(128, 248, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl01o"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(249, 248, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcc14"]
+atlas = ExtResource("3_ojf8p")
+region = Rect2(370, 248, 121, 117)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65gd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkitb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ob6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4tfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tt1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwuoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tayxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiwkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4553j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpr2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c58ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl01o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcc14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_gxua3")
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(593.10004, 418)
+scale = Vector2(2.3000002, 2.3)
+texture = ExtResource("1_85q8e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -37.0
+offset_top = 345.0
+offset_right = 1238.0
+offset_bottom = 450.0
+color = Color(0.0627451, 0.4627451, 0.54901963, 1)
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_left = 511.0
+offset_top = 332.0
+offset_right = 689.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 40
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_fjxr3")
+
+[node name="try again" type="Button" parent="CanvasLayer"]
+offset_left = 382.0
+offset_top = 264.0
+offset_right = 606.0
+offset_bottom = 505.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+icon = ExtResource("3_4835h")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_fjxr3")
+
+[node name="quote" type="Label" parent="CanvasLayer"]
+offset_left = -14.0
+offset_top = 406.0
+offset_right = 1216.0
+offset_bottom = 429.0
+text = "quote"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_4835h")
+
+[node name="earth" type="Area2D" parent="."]
+z_index = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="earth"]
+position = Vector2(595, 257)
+scale = Vector2(1.6897829, 1.5833328)
+sprite_frames = SubResource("SpriteFrames_65gd6")
+autoplay = "default"
+frame_progress = 0.9693817
