@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwxusormhyd1a"]
+[gd_scene load_steps=20 format=3 uid="uid://cwxusormhyd1a"]
 
 [ext_resource type="Texture2D" uid="uid://bgyxecsl52kaf" path="res://assets/sprites/Space background.jpg" id="1_85q8e"]
 [ext_resource type="Script" uid="uid://dd17ll52oex6e" path="res://scripts/score.gd" id="2_fjxr3"]
@@ -6,20 +6,6 @@
 [ext_resource type="Script" uid="uid://b1ndax7wndxii" path="res://scripts/try_again.gd" id="3_fjxr3"]
 [ext_resource type="Texture2D" uid="uid://c18fkndmlot7a" path="res://assets/sprites/earth.png" id="3_ojf8p"]
 [ext_resource type="Script" uid="uid://dtlwfwj2na7r5" path="res://scripts/quote.gd" id="5_4835h"]
-
-[sub_resource type="GDScript" id="GDScript_gxua3"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkitb"]
 atlas = ExtResource("3_ojf8p")
@@ -114,7 +100,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_gxua3")
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 z_index = -1
